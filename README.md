@@ -3,7 +3,7 @@ React Paginator
 
 A React paginator component based in the Laravel Paginator module. Expects the Bootstrap style classes to be loaded.
 
-* [See the demo](https://dgoguerra.github.io/react-paginator/)
+* [See the demo](https://dgoguerra.github.io/react-paginator/demo.html)
 
 Installation
 ------------
