@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dgoguerra/react-laravel-paginator.git"
+    "url": "https://github.com/dgoguerra/react-paginator.git"
   },
   "keywords": [
     "react",
@@ -36,7 +36,7 @@
   "author": "Diego Guerra <dgoguerra.or@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dgoguerra/react-laravel-paginator/issues"
+    "url": "https://github.com/dgoguerra/react-paginator/issues"
   },
-  "homepage": "https://github.com/dgoguerra/react-laravel-paginator"
+  "homepage": "https://github.com/dgoguerra/react-paginator"
 }
