@@ -10,41 +10,53 @@ var Paginator = React.createClass({
         lastPage: React.PropTypes.number.isRequired,
         onChange: React.PropTypes.func.isRequired
     },
-    previousPageClicked: function() {
-        if (this.props.currPage != 1) {
-            this.props.onChange(this.props.currPage-1);
+    prevPageClicked: function() {
+        if (this.props.currPage > 1) {
+            this.props.onChange(Number(this.props.currPage) - 1);
         }
     },
     nextPageClicked: function() {
-        if (this.props.currPage != this.props.lastPage) {
-            this.props.onChange(this.props.currPage+1);
+        if (this.props.currPage < this.props.lastPage) {
+            this.props.onChange(Number(this.props.currPage) + 1);
         }
     },
     pageClicked: function(pageNum) {
-        this.props.onChange(pageNum);
+        if (this.props.currPage != pageNum) {
+            this.props.onChange(Number(pageNum));
+        }
     },
     renderPrevious: function() {
-        var classStr = classNames({ disabled: this.props.currPage == 1 });
-        return <li key="prev" className={classStr}><a rel="prev" onClick={this.previousPageClicked}>«</a></li>;
+        var classStr = classNames({ disabled: this.props.currPage <= 1 });
+        return (
+            <li key="prev" className={classStr}>
+                <a rel="prev" onClick={this.prevPageClicked}>«</a>
+            </li>
+        );
     },
     renderNext: function() {
-        var classStr = classNames({ disabled: this.props.currPage == this.props.lastPage });
-        return <li key="next" className={classStr}><a rel="next" onClick={this.nextPageClicked}>»</a></li>;
+        var classStr = classNames({ disabled: this.props.currPage >= this.props.lastPage });
+        return (
+            <li key="next" className={classStr}>
+                <a rel="next" onClick={this.nextPageClicked}>»</a>
+            </li>
+        );
     },
     renderDots: function(key) {
         return <li key={key} className="disabled"><span>...</span></li>;
     },
+    renderNumber: function(num) {
+        var classStr = classNames({ active: this.props.currPage == num });
+        return (
+            <li key={num} className={classStr}>
+                <a onClick={_.partial(this.pageClicked, num)}>{num}</a>
+            </li>
+        );
+    },
     renderRange: function(firstNum, lastNum) {
         var pages = [];
         for (var i = firstNum; i <= lastNum; i++) {
-            if (this.props.currPage == i) {
-                pages.push(<li key={i} className="active"><span>{i}</span></li>);
-            }
-            else {
-                pages.push(<li key={i}><a onClick={_.partial(this.pageClicked, i)}>{i}</a></li>);
-            }
+            pages.push(this.renderNumber(i));
         }
-
         return pages;
     },
     renderStart: function() {
@@ -97,11 +109,10 @@ var Paginator = React.createClass({
         }
 
         buttons.push(this.renderNext());
+
         return (
             <div className="text-center">
-                <ul className="pagination">
-                    {buttons}
-                </ul>
+                <ul className="pagination">{buttons}</ul>
             </div>
         );
     }
