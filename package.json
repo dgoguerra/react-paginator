@@ -1,0 +1,40 @@
+{
+  "name": "react-laravel-paginator",
+  "version": "0.1.0",
+  "description": "Bootstrap paginator for React based in the Laravel Paginator",
+  "main": "Paginator.js",
+  "dependencies": {
+    "lodash": "^3.10.0",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.15.5",
+    "file-loader": "^0.8.4",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.10.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgoguerra/react-laravel-paginator.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "paginate",
+    "paginator",
+    "bootstrap",
+    "laravel"
+  ],
+  "author": "Diego Guerra <dgoguerra.or@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgoguerra/react-laravel-paginator/issues"
+  },
+  "homepage": "https://github.com/dgoguerra/react-laravel-paginator"
+}
