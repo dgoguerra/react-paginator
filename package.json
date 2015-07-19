@@ -1,6 +1,6 @@
 {
   "name": "react-laravel-paginator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bootstrap paginator for React based in the Laravel Paginator",
   "main": "Paginator.js",
   "dependencies": {
