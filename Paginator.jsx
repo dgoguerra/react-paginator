@@ -29,7 +29,7 @@ var Paginator = React.createClass({
         var classStr = classNames({ disabled: this.props.currPage <= 1 });
         return (
             <li key="prev" className={classStr}>
-                <a rel="prev" onClick={this.prevPageClicked}>«</a>
+                <a href="#" rel="prev" onClick={this.prevPageClicked}>«</a>
             </li>
         );
     },
@@ -37,7 +37,7 @@ var Paginator = React.createClass({
         var classStr = classNames({ disabled: this.props.currPage >= this.props.lastPage });
         return (
             <li key="next" className={classStr}>
-                <a rel="next" onClick={this.nextPageClicked}>»</a>
+                <a href="#" rel="next" onClick={this.nextPageClicked}>»</a>
             </li>
         );
     },
@@ -48,7 +48,7 @@ var Paginator = React.createClass({
         var classStr = classNames({ active: this.props.currPage == num });
         return (
             <li key={num} className={classStr}>
-                <a onClick={_.partial(this.pageClicked, num)}>{num}</a>
+                <a href="#" onClick={_.partial(this.pageClicked, num)}>{num}</a>
             </li>
         );
     },
