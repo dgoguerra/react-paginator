@@ -20989,17 +20989,23 @@
 	        lastPage: React.PropTypes.number.isRequired,
 	        onChange: React.PropTypes.func.isRequired
 	    },
-	    prevPageClicked: function() {
+	    prevPageClicked: function(evt) {
+	        evt.preventDefault();
+
 	        if (this.props.currPage > 1) {
 	            this.props.onChange(Number(this.props.currPage) - 1);
 	        }
 	    },
-	    nextPageClicked: function() {
+	    nextPageClicked: function(evt) {
+	        evt.preventDefault();
+
 	        if (this.props.currPage < this.props.lastPage) {
 	            this.props.onChange(Number(this.props.currPage) + 1);
 	        }
 	    },
-	    pageClicked: function(pageNum) {
+	    pageClicked: function(pageNum, evt) {
+	        evt.preventDefault();
+
 	        if (this.props.currPage != pageNum) {
 	            this.props.onChange(Number(pageNum));
 	        }
